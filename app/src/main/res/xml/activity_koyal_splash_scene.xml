@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="2000">
+       <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@+id/mtv_title"
+               motion:framePosition="11"
+               android:alpha="0.0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/mtv_title"
+               motion:framePosition="26"
+               android:alpha="0.0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/mtv_copyright"
+               motion:framePosition="26"
+               android:alpha="0.0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/mtv_title"
+               motion:framePosition="0"
+               android:alpha="0.5" />
+           <KeyAttribute
+               motion:motionTarget="@+id/mtv_title"
+               motion:framePosition="40"
+               android:alpha="0.0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/mtv_title"
+               motion:framePosition="51"
+               android:alpha="0.0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/mtv_title"
+               motion:framePosition="61"
+               android:alpha="0.0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/mtv_title"
+               motion:framePosition="67"
+               android:alpha="0.0" />
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/iv_logo"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:scaleX="0.7"
+            android:scaleY="0.7"
+            android:translationY="-130dp"
+            android:rotationX="-4"
+            android:rotationY="8"
+            motion:transitionEasing="cubic(0.58,0.38,0.8,0.8)"
+            motion:pathMotionArc="flip" />
+        <Constraint
+            android:id="@+id/mtv_title"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:alpha="1.0"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:scaleX=".9"
+            android:scaleY=".9" />
+        <Constraint
+            android:id="@+id/mtv_copyright"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:alpha="1.0"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:translationY="-10dp" />
+    </ConstraintSet>
+</MotionScene>

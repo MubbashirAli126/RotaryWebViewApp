@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/koyal_motion_layout"
+    android:background="@drawable/log_back"
+    app:layoutDescription="@xml/activity_koyal_splash_scene"
+    tools:context=".KoyalSplashActivity">
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:src="@drawable/klogo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/mtv_title"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:alpha="0.0"
+        android:src="@drawable/koel_hd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/mtv_copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.0"
+        android:drawablePadding="@dimen/_5sdp"
+        android:fontFamily="@font/gilroy_medium"
+        android:gravity="center"
+        android:text="Powered By MobiTising"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+        android:textColor="@color/sologon_txt"
+
+        android:textSize="@dimen/_17sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

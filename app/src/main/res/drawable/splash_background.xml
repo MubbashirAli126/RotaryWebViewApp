@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/bg_gradient"/>
+
+<!--    <item android:drawable="@drawable/wheel"-->
+<!--        android:width="200dp"-->
+<!--        android:height="200dp"-->
+<!--        android:gravity="center"-->
+<!--        tools:targetApi="m" />-->
+</layer-list>
