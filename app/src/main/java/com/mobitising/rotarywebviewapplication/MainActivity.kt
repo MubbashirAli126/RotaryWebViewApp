@@ -1,32 +1,24 @@
-package com.mubbashir.rotarywebviewapplication
+package com.mobitising.rotarywebviewapplication
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.webkit.WebView
 
-import android.webkit.WebChromeClient
-
-import android.widget.Toast
-
-import android.graphics.Bitmap
 import android.view.View
 import android.view.animation.AnimationUtils
+import android.webkit.*
 
-import android.webkit.WebViewClient
-
-import android.webkit.WebSettings
 import android.widget.LinearLayout
-import com.mubbashir.rotarywebviewapplication.utils.Loader
-import com.mubbashir.rotarywebviewapplication.utils.FancyGifDialogListener
+import com.mobitising.rotarywebviewapplication.utils.Loader
 
 
-import com.mubbashir.rotarywebviewapplication.utils.FancyGifDialog
+import com.mobitising.rotarywebviewapplication.utils.FancyGifDialog
+import mobitising.rotarywebviewapplication.R
 
 class MainActivity : AppCompatActivity() {
     private var webView: WebView? = null
-    private var loader: Loader? = null
+//    private var loader: Loader? = null
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,11 +32,34 @@ class MainActivity : AppCompatActivity() {
         lay.startAnimation(enter)
 
         webView = findViewById(R.id.webview)
-        loader = Loader()
+//        loader = Loader()
 
+//        loader!!.showDialog(this@MainActivity)
 
+        if(internetIsConnected()){
 
-        startWebView("http://wp.rotary3271.org/")
+            startWebView("https://rotary3271.org/")
+        }else{
+
+//            loader!!.HideLoader()
+            //Showing and creating an alet dialog
+            val alertDialog = AlertDialog.Builder(this@MainActivity).create()
+            alertDialog.setTitle("Sorry")
+            alertDialog.setMessage("Please Check Your Internet Connection")
+            alertDialog.setButton(
+                "Again"
+            ) { _, _ ->
+                if (internetIsConnected()){
+//                    loader!!.showDialog(this@MainActivity)
+                    startWebView("https://rotary3271.org/")
+                }else{
+                    alertDialog.hide();
+                    this@MainActivity.finish()
+                    startActivity(this@MainActivity.intent)
+                }
+            }
+            alertDialog.show()
+        }
 
     }
     private fun ExitApp(){
@@ -68,7 +83,14 @@ class MainActivity : AppCompatActivity() {
             }
             .build()
     }
-
+    private fun internetIsConnected(): Boolean {
+        return try {
+            val command = "ping -c 1 google.com"
+            Runtime.getRuntime().exec(command).waitFor() == 0
+        } catch (e: java.lang.Exception) {
+            false
+        }
+    }
     //hello
     private fun startWebView(url: String) {
         val settings = webView!!.settings
@@ -77,7 +99,7 @@ class MainActivity : AppCompatActivity() {
         webView!!.settings.builtInZoomControls = true
         webView!!.settings.useWideViewPort = true
         webView!!.settings.loadWithOverviewMode = true
-        loader!!.showDialog(this@MainActivity)
+
         webView!!.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
                    view.loadUrl(url)
@@ -85,9 +107,10 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onPageFinished(view: WebView, url: String) {
-                loader!!.HideLoader()
+//                loader!!.HideLoader()
             }
 
+            //WebView view, WebResourceRequest req, WebResourceError rer
             override fun onReceivedError(
                 view: WebView,
                 errorCode: Int,
@@ -107,21 +130,13 @@ class MainActivity : AppCompatActivity() {
                 if (webView!!.canGoBack()) {
                     webView!!.goBack()
                 }
-                webView!!.loadUrl(url)
+//                webView!!.loadUrl(url)
 
-                //Showing and creating an alet dialog
-                val alertDialog = AlertDialog.Builder(this@MainActivity).create()
-                alertDialog.setTitle("Sorry")
-                alertDialog.setMessage("Please Check Your Internet Connection")
-                alertDialog.setButton(
-                    "Again"
-                ) { dialog, which ->
-                    this@MainActivity.finish()
-                    startActivity(this@MainActivity.getIntent())
-                }
-                alertDialog.show()
 
+//                var request:WebResourceRequest=WebResourceRequest;
                 //Don't forget to call supper!
+//                super.onReceivedError(webView, req,rerr)
+//                super.onReceivedError(webView, rerr.errorCode, rerr.description.toString(), req.url.toString())
                 super.onReceivedError(webView, errorCode, description, failingUrl)
             }
         }

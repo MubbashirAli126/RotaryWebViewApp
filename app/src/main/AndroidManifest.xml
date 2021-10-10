@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mubbashir.rotarywebviewapplication">
+    package="mobitising.rotarywebviewapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,10 +14,10 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.RotaryWebviewApplication">
         <activity
-            android:name=".KoyalSplashActivity"
+            android:name="com.mobitising.rotarywebviewapplication.KoyalSplashActivity"
             android:exported="true" />
         <activity
-            android:name=".FinalSplashActivity"
+            android:name="com.mobitising.rotarywebviewapplication.FinalSplashActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -26,14 +27,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SplashActivityUpdated"
+            android:name="com.mobitising.rotarywebviewapplication.SplashActivityUpdated"
             android:exported="true" />
         <activity
-            android:name=".SplashActivity"
+            android:name="com.mobitising.rotarywebviewapplication.SplashActivity"
             android:exported="true"
             android:theme="@style/SplashTheme"></activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.mobitising.rotarywebviewapplication.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
     </application>

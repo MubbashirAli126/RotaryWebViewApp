@@ -7,11 +7,11 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.mubbashir.rotarywebviewapplication"
+        applicationId "com.mobitising.rotarywebviewapplication"
         minSdk 23
         targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -39,6 +39,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
     implementation files('libs\\Final Android Resizer.jar')
     testImplementation 'junit:junit:4.+'
+    implementation 'com.google.android.play:core:1.10.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.+'
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
