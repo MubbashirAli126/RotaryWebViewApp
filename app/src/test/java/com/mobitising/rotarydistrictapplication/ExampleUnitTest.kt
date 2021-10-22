@@ -1,4 +1,4 @@
-package com.mobitising.rotarywebviewapplication
+package com.mobitising.rotarydistrictapplication
 
 import org.junit.Test
 

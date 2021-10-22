@@ -1,8 +1,8 @@
-package com.mobitising.rotarywebviewapplication
+package com.mobitising.rotarydistrictapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import mobitising.rotarywebviewapplication.R
+import mobitising.rotarydistrictapplication.R
 
 class KoyalSplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

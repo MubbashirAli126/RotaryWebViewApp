@@ -1,4 +1,4 @@
-package com.mobitising.rotarywebviewapplication.utils;
+package com.mobitising.rotarydistrictapplication.utils;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -15,7 +15,7 @@ import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
 
 
-import mobitising.rotarywebviewapplication.R;
+import mobitising.rotarydistrictapplication.R;
 import pl.droidsonroids.gif.GifImageView;
 
 public class FancyGifDialog {

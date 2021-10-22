@@ -7,7 +7,7 @@
     android:background="@drawable/bg_gradient"
     android:id="@+id/finalMotionLayout"
     app:layoutDescription="@xml/activity_final_splash_scene"
-    tools:context=".FinalSplashActivity">
+    tools:context="com.mobitising.rotarydistrictapplication.FinalSplashActivity">
     <ImageView
         android:id="@+id/iv_logo"
         android:layout_width="200dp"

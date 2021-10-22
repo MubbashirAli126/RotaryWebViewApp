@@ -7,7 +7,7 @@
     android:id="@+id/koyal_motion_layout"
     android:background="@drawable/log_back"
     app:layoutDescription="@xml/activity_koyal_splash_scene"
-    tools:context=".KoyalSplashActivity">
+    tools:context="com.mobitising.rotarydistrictapplication.KoyalSplashActivity">
 
     <ImageView
         android:id="@+id/iv_logo"

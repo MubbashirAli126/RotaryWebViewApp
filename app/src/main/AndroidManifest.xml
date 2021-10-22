@@ -1,42 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="mobitising.rotarywebviewapplication">
+    package="mobitising.rotarydistrictapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+
+    <uses-permission-sdk-23 android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:fullBackupContent="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.RotaryWebviewApplication">
         <activity
-            android:name="com.mobitising.rotarywebviewapplication.KoyalSplashActivity"
+            android:name="com.mobitising.rotarydistrictapplication.KoyalSplashActivity"
             android:exported="true" />
         <activity
-            android:name="com.mobitising.rotarywebviewapplication.FinalSplashActivity"
+            android:name="com.mobitising.rotarydistrictapplication.FinalSplashActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
+
+        </activity>
+        <activity
+            android:name="com.mobitising.rotarydistrictapplication.SplashActivityUpdated"
+            android:exported="true" />
+        <activity
+            android:name="com.mobitising.rotarydistrictapplication.SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme"/>
+        <activity
+            android:name="com.mobitising.rotarydistrictapplication.MainActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.mobitising.rotarywebviewapplication.SplashActivityUpdated"
-            android:exported="true" />
-        <activity
-            android:name="com.mobitising.rotarywebviewapplication.SplashActivity"
-            android:exported="true"
-            android:theme="@style/SplashTheme"></activity>
-        <activity
-            android:name="com.mobitising.rotarywebviewapplication.MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
     </application>
 
 </manifest>
